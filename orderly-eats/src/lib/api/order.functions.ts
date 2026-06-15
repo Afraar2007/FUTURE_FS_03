@@ -8,7 +8,7 @@ import {
 } from "./store.server";
 
 export const placeOrder = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     z.object({
       items: z.array(
         z.object({
@@ -39,7 +39,7 @@ export const placeOrder = createServerFn({ method: "POST" })
   });
 
 export const getOrderById = createServerFn({ method: "POST" })
-  .inputValidator(z.object({ id: z.string().min(1) }))
+  .validator(z.object({ id: z.string().min(1) }))
   .handler(async ({ data }) => {
     const order = await getOrder(data.id);
     if (!order) throw new Error("Order not found");
@@ -51,7 +51,7 @@ export const getOrders = createServerFn({ method: "POST" }).handler(async () => 
 });
 
 export const advanceOrderStatus = createServerFn({ method: "POST" })
-  .inputValidator(z.object({ id: z.string().min(1) }))
+  .validator(z.object({ id: z.string().min(1) }))
   .handler(async ({ data }) => {
     const order = await advanceOrder(data.id);
     if (!order) throw new Error("Order not found");
