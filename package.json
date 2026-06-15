@@ -1,4 +1,13 @@
 {
+  "name": "future-fs-03",
+  "private": true,
+  "type": "module",
+  "workspaces": ["orderly-eats"],
+  "scripts": {
+    "dev": "npm --workspace orderly-eats run dev",
+    "build": "npm --workspace orderly-eats run build",
+    "preview": "npm --workspace orderly-eats run preview"
+  },
   "dependencies": {
     "mongodb": "^7.3.0",
     "mongoose": "^8.0.0"
