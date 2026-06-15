@@ -18,3 +18,4 @@ Notes:
 - Do not include a `rootDirectory` property in `vercel.json`; Vercel's import API rejects it. The repository already omits that field.
 - The app uses TanStack Start with a Vercel server preset; the `vite.config.ts` is configured accordingly.
 
+"# Future-FS-03" 
